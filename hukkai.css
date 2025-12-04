@@ -1,0 +1,182 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+
+.main-header {
+    
+    background-color: #333;
+    color: white;
+    padding: 15px 30px;
+
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logo a {
+    color: white;
+    text-decoration: none; 
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+
+.main-nav ul {
+    list-style: none; 
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: 20px; 
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s; 
+}
+
+.main-nav a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+/* --- Стили для Секции Карточек --- */
+
+.card-section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f4f4f9; /* Светлый фон для секции */
+}
+
+.card-section h2 {
+    margin-bottom: 30px;
+    font-size: 2em;
+    color: #333;
+}
+
+/* --- Настройка Сетки (Grid Container) --- */
+
+.cards-grid {
+    /* Активируем Grid Layout */
+    display: grid; 
+    
+    /* Определяем колонки: 3 одинаковые по ширине (1fr) */
+    grid-template-columns: repeat(3, 1.5fr);
+    
+    /* Отступы между карточками (gap) */
+    gap: 30px;
+    
+    /* Ограничение ширины контейнера по центру */
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* --- Стили для Отдельной Карточки --- */
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    padding-bottom: 20px;
+    overflow: hidden; /* Обрезает изображение по углам */
+    text-align: left;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    padding: 0 15px;
+    font-size: 1.3em;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.card p {
+    padding: 0 15px;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.card .btn {
+    display: inline-block;
+    background-color: #007bff; /* Яркая кнопка */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 15px;
+    transition: background-color 0.3s;
+}
+
+.card .btn:hover {
+    background-color: #0056b3;
+}
+
+/* --- Адаптивность (Media Queries) --- */
+
+/* Для средних экранов (например, планшетов) */
+@media (max-width: 900px) {
+    .cards-grid {
+        /* Меняем на 2 колонки */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Для маленьких экранов (например, мобильных телефонов) */
+@media (max-width: 600px) {
+    .cards-grid {
+        /* Меняем на 1 колонку */
+        grid-template-columns: 1fr;
+    }
+}
+/* Добавляем плавный переход для анимации при наведении */
+.card {
+    /* ... существующие стили для .card ... */
+    
+    /* Добавьте эту строку для плавной анимации */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+/* Эффект при наведении на карточку */
+.card:hover {
+    /* Приподнимаем карточку на 5 пикселей */
+    transform: translateY(-5px); 
+    /* Делаем тень более заметной и мягкой */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); 
+    /* Можно также добавить легкую смену цвета фона */
+    /* background-color: #f8f8f8; */
+}
+/* Обновляем плавный переход в .main-nav a */
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    /* transition: background-color 0.3s;  <-- Замените на: */
+    transition: all 0.3s ease; /* Плавный переход для всех свойств */
+}
+
+/* Обновляем эффект при наведении */
+.main-nav a:hover {
+    background-color: #555;
+    border-radius: 5px;
+    color: #ffd700; /* Золотистый цвет текста */
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.7); /* Легкое свечение */
+}
