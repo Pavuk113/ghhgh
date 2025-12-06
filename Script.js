@@ -43,6 +43,7 @@ function renderPlaces(userLat, userLon, data) {
                 <img src="${place.img}" alt="${place.title}">
                 <h3>${place.title}</h3>
                 <p>Расстояние: ${place.distance} км</p>
+                <button class="btn">Подробнее</button>
             </div>
         `;
         container.insertAdjacentHTML("beforeend", cardHTML);
